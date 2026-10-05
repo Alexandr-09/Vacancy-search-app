@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Пошук вакансій</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="container">
+    <!-- Заголовок количества вакансий  -->
+    <h1 id="total-title">Завантаження...</h1>
+
+    <!-- Форма фильтров -->
+    <form class="filters-form" id="filters-form">
+        <div class="search-input-wrapper">
+            <!-- SVG-иконка лупы -->
+            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ADB8CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+
+            <input type="text" name="q" id="search-input" placeholder="     Посада або компанія" maxlength="20">
+        </div>
+        <select name="city" id="city-select">
+            <option value="">Усі міста</option>
+        </select>
+
+        <input type="number" id="salary-input" name="salaryFrom" placeholder="Зарплата від, грн" min="0">
+
+        <label class="remote-label">
+            <input type="checkbox" name="remote" value="1" id="remote-checkbox">
+            <span>Віддалено</span>
+        </label>
+
+        <div class="buttonSearch">
+            <button type="submit" id="search-button"
+            >Знайти
+            </button>
+
+        </div>
+    </form>
+
+    <!-- Сетка вакансий -->
+    <div class="vacancies-grid"></div>
+
+    <!-- Пагинация: контейнер для цифр тоже очищен -->
+    <nav class="pagination">
+        <button type="button" class="pagination-button pagination-button--previous" id="prev-page-btn" aria-label="Попередня сторінка" disabled>
+            &larr;
+        </button>
+
+        <div class="pagination-pages" id="pagination-pages"></div>
+
+        <button type="button" class="pagination-button pagination-button--next" id="next-page-btn" aria-label="Наступна сторінка">
+            &rarr;
+        </button>
+    </nav>
+</main>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
